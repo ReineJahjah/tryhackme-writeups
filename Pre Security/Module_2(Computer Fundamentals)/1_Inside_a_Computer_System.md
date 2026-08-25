@@ -9,7 +9,7 @@ Learn the basic hardware components of a computer, understand the purpose of eac
 ---
 
 ## Key Concepts
-![Motherboard](images/ComputerSystem.png)
+![ComputerSystem](images/ComputerSystem.png)
 - **Computer System:** A collection of hardware components working together to process data and provide services.
 - **Motherboard:** The main circuit board that connects and allows communication between all hardware components.
 - **Boot Process:** The sequence of steps a computer follows to start and load the operating system.
