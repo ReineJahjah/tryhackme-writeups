@@ -124,12 +124,15 @@ As more devices connect to the Internet, available public addresses are running 
 
 * **IPv4** uses 2³² possible addresses (~4.29 billion) — hence the shortage.
 * **IPv6** was introduced to solve this, supporting up to 2¹²⁸ addresses (340+ trillion) and using more efficient methodologies.
+![IPv4 vs IPv6](images/pv4-vs-ipv6.png)
 
 ## MAC Addresses
 
 Every networked device has a physical network interface (a microchip on the motherboard), assigned a unique **MAC address** at the factory. A MAC address is a twelve-character hexadecimal number, split into pairs and separated by colons — e.g. `a4:c3:f0:85:ac:2d`. The first six characters identify the manufacturer; the last six form a unique device number.
 
 ### MAC Address Spoofing
+
+![MAC@](images/MAC.png)
 
 MAC addresses can be faked, or **spoofed** — where a device pretends to be another device by using its MAC address. This can break poorly implemented security designs that assume devices on a network are trustworthy.
 
@@ -142,6 +145,82 @@ Places like cafes, coffee shops, and hotels often use MAC address control on the
 The interactive lab simulates a hotel Wi-Fi network requiring payment. The router blocks Bob's packets (unpaid) from reaching the TryHackMe website while allowing Alice's packets through (paid). Changing Bob's MAC address to match Alice's demonstrates how spoofing can bypass this kind of MAC-based access control.
 
 ---
+
+## Ping (ICMP)
+
+**Ping** is a fundamental network tool used to check whether a device is reachable and to measure the time it takes for data to travel between two devices.
+
+Ping uses **ICMP (Internet Control Message Protocol)** packets.
+
+### How Ping Works
+
+Ping sends an **ICMP Echo Request** to the target device.
+
+If the target is reachable, it responds with an **ICMP Echo Reply**.
+
+The time between sending the request and receiving the reply is measured, allowing us to see the connection's response time.
+
+### Basic Syntax
+
+```text
+ping IP_ADDRESS
+```
+
+For example:
+
+```text
+ping 8.8.8.8
+```
+
+Here, `8.8.8.8` is the IP address being tested.
+
+### What Ping Can Tell Us
+
+Ping can help determine:
+
+* Whether a device is reachable.
+* Whether packets are being successfully returned.
+* How long packets take to travel between the devices.
+* Whether there may be connection or reliability problems.
+![ping](images/ping.png)
+
+### Example
+
+```text
+ping 192.168.1.254
+```
+
+A successful ping may show that ICMP packets were sent and received, along with the response time.
+
+For example:
+
+```text
+Reply from 192.168.1.254: bytes=32 time=4ms TTL=64
+```
+
+The `time=4ms` value represents approximately how long the round trip took.
+
+### ICMP
+
+**ICMP (Internet Control Message Protocol)** is a network protocol used for sending control and diagnostic messages.
+
+Ping specifically uses:
+
+* **Echo Request** → Sent to the target.
+* **Echo Reply** → Returned by the target.
+
+### Practical
+
+The TryHackMe practical asks us to ping the IP address:
+
+```text
+ping 8.8.8.8
+```
+
+Pinging the correct address reveals a flag that can be used to answer the room's question.
+
+**Note:** The flag itself is not included here because it was not provided in the room content above.
+
 
 # Task 4: Conclusion
 
