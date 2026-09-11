@@ -196,6 +196,10 @@ Cookies can be viewed using the browser's developer tools:
 3. Click on a request for a detailed breakdown of the request/response.
 4. If the browser sent a cookie, it will appear on the **Cookies** tab of that request.
 
+On Chrome:
+
+![view cookies](images/cookies.png)
+
 ---
 
 # Task 6: Making Requests (Practical)
