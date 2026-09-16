@@ -144,6 +144,8 @@ Having a clear understanding of each component of the CIA Triad enables a profes
 
 At a cyber security workshop, part of an engagement exercise involves nine different security incidents. Each incident is read carefully, then classified according to which part of the CIA Triad it affects most — dragging and dropping each incident into the pillar it impacts.
 
+![CIA Classification](images/CIAClassification.png)
+
 ## Answers
 
 **Q) What is the flag received after solving the exercise?**
